@@ -14,7 +14,8 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y mysql-server
     - name: Start MySQL Service
       run: | 
-        sudo service mysql start          sudo service mysql status
+        sudo service mysql start          
+        sudo service mysql status
     - name: Show Databases
       run: |
         mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
@@ -33,10 +34,7 @@ jobs:
         source venv/bin/activate
         pip3 install django
         pip3 install mysqlclient
-        pip install Flask mysql-connector-python
-    - name: Flask\
-      run: |
-        
+        pip install Flask mysql-connector-python      
         sudo chmod 777 /var/run/mysqld/mysqld.sock
         mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
         python3 manage.py runserver
