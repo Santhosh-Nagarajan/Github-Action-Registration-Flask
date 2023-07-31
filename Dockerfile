@@ -11,7 +11,7 @@ RUN pip install mysql-connector-python
 
 #RUN pip3 install mysqlclient==2.2.0
 
-RUN python3 manage.py makemigrations && python3 manage.py migrate
+#RUN python3 manage.py makemigrations && python3 manage.py migrate
 
 EXPOSE 8000
 
