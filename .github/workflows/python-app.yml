@@ -40,5 +40,6 @@ jobs:
         python3 manage.py migrate
     - name: run
       run: | 
+        pip3 install django
         python3 manage.py runserver
        
