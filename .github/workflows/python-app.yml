@@ -40,4 +40,4 @@ jobs:
         pip3 install mysqlclient
     - name: show Data
       run: |
-        show databases:
+        mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
