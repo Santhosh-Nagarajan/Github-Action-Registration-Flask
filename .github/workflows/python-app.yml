@@ -38,4 +38,7 @@ jobs:
         mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
         python3 manage.py makemigrations
         python3 manage.py migrate
+    - name: run
+      run: | 
         python3 manage.py runserver
+       
