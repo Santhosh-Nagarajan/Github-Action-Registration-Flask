@@ -81,16 +81,24 @@ WSGI_APPLICATION = 'registration.wsgi.application'
     #}
 #}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Santhosh',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # or your MySQL server's hostname
-        'PORT': '3306',  # or your MySQL server's port
-    }
-}
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.mysql',
+   #     'NAME': 'Santhosh',
+    #    'USER': 'root',
+     #   'PASSWORD': 'root',
+      #  'HOST': 'localhost',  # or your MySQL server's hostname
+       # 'PORT': '3306',  # or your MySQL server's port
+    #}
+#}
+
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="root",
+    database="root"
+)
+
 
 
 # Password validation
