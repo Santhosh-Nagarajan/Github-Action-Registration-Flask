@@ -74,23 +74,23 @@ WSGI_APPLICATION = 'registration.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 #DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.mysql',
-   #     'NAME': 'github',
-    #    'USER': 'root',
-     #   'PASSWORD': '02136',
-      #  'HOST': '172.17.0.2',  # or your MySQL server's hostname
-       # 'PORT': '3306',  # or your MySQL server's port
+    #'default': {
+     #   'ENGINE': 'django.db.backends.sqlite3',
+      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #}
 #}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Santhosh',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',  # or your MySQL server's hostname
+        'PORT': '3306',  # or your MySQL server's port
+    }
+}
 
 
 # Password validation
