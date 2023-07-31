@@ -19,7 +19,7 @@ jobs:
     - name: Show Databases
       run: |
         mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
-        mysql -h localhost -uroot -proot -e "CREATE DATABASE IF NOT EXISTS Santhosh;"
+        mysql -h localhost -uroot -proot -e "CREATE DATABASE IF NOT EXISTS Murugan;"
         mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
         mysql -h localhost --port 3306 -uroot -proot -e "USE Santhosh; SHOW DATABASES;"
     
