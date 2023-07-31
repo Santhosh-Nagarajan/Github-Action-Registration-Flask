@@ -5,27 +5,10 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ] 
-
-jobs:
-  setup-mysql:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Install MySQL
-        run: sudo apt-get update && sudo apt-get install -y mysql-server
-
-      - name: Start MySQL Service
-        run: | 
-          sudo service mysql start
-          sudo service mysql status
-      - name: Show Databases
-        run: |
-          mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
-          mysql -h localhost -uroot -proot -e "CREATE DATABASE IF NOT EXISTS Santhosh;"
-          mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
-          mysql -h localhost --port 3306 -uroot -proot -e "USE Santhosh; SHOW DATABASES;"
-  
-  build_job2:
     
+jobs:
+  build:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -38,6 +21,6 @@ jobs:
       run: |
         pip3 install django
         pip3 install mysqlclient
-    - name: show Data
+    - name: Flask\
       run: |
-        mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
+        python3 manage.py runserver
