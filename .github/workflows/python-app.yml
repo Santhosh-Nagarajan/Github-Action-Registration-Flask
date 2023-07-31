@@ -41,5 +41,6 @@ jobs:
     - name: run
       run: | 
         pip3 install django
+        pip3 install mysqlclient
         python3 manage.py runserver
        
