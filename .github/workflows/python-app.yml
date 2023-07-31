@@ -36,4 +36,4 @@ jobs:
       
       - name: Flask Registration  
         run: |
-          python manage.py makemigrations
+          python3 manage.py runserver
