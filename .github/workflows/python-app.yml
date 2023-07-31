@@ -34,7 +34,8 @@ jobs:
         source venv/bin/activate
         pip3 install django
         pip3 install mysqlclient
-        pip install Flask mysql-connector-python      
         sudo chmod 777 /var/run/mysqld/mysqld.sock
         mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
+        python3 manage.py makemigrations
+        python3 manage.py migrate
         python3 manage.py runserver
