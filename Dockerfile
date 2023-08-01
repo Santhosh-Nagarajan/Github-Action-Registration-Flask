@@ -15,7 +15,9 @@ ENV PATH="/bro/bin:$PATH"
 
 RUN pip3 install django
 
-RUN pip install mysql-connector-python
+RUN apt-get update && apt-get install -y libmysqlclient-dev
+
+RUN pip install --upgrade pip
 
 RUN pip3 install mysqlclient==2.2.0
 
