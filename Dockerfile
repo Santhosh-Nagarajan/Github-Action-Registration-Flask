@@ -5,6 +5,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN apt-get install -y python3-venv
+
 RUN pip3 install virtualenv
 
 RUN python3 -m venv env
