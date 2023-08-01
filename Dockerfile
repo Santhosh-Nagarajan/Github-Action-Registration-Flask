@@ -11,15 +11,15 @@ RUN pip3 install virtualenv
 
 RUN python3 -m venv bro
 
-RUN . /bro/bin/activate
+RUN /bro/bin/activate
 
 RUN pip3 install django
 
 RUN pip install mysql-connector-python
 
-#RUN pip3 install mysqlclient==2.2.0
+RUN pip3 install mysqlclient==2.2.0
 
-#RUN python3 manage.py makemigrations && python3 manage.py migrate
+RUN python3 manage.py makemigrations && python3 manage.py migrate
 
 EXPOSE 8000
 
