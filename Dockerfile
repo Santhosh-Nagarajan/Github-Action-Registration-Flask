@@ -11,7 +11,7 @@ RUN pip3 install virtualenv
 
 RUN python3 -m venv bro
 
-RUN source /bro/bin/activate
+RUN . /bro/bin/activate
 
 RUN pip3 install django
 
