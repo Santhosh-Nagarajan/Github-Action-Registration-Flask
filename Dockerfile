@@ -7,16 +7,11 @@ COPY . .
 
 RUN apt-get update
 
-RUN apt-get install -y python3-venv
-
 RUN pip3 install virtualenv
 
-RUN mkdir directory_env && cd directory_env
+RUN python3 -m venv bro
 
-
-RUN python3 -m venv 
-
-RUN source /bin/activate
+RUN source /bro/bin/activate
 
 RUN pip3 install django
 
