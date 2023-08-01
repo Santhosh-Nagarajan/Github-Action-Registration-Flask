@@ -11,9 +11,9 @@ RUN apt-get install -y python3-venv
 
 RUN pip3 install virtualenv
 
-RUN python3 -m venv env
+RUN python3 -m venv santhosh
 
-RUN source env/bin/activate
+RUN source santhosh/bin/activated
 
 RUN pip3 install django
 
