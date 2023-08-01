@@ -15,7 +15,7 @@ ENV PATH="/bro/bin:$PATH"
 
 RUN pip3 install django
 
-RUN apt-get update && apt-get install -y libmysqlclient-dev
+RUN apt-get update && apt-get install -y libmariadb-dev-compat
 
 RUN pip install --upgrade pip
 
