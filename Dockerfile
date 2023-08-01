@@ -5,6 +5,12 @@ WORKDIR /app
 
 COPY . .
 
+RUN pip3 install virtualenv
+
+RUN python3 -m venv env
+
+RUN source env/bin/activate
+
 RUN pip3 install django
 
 RUN pip install mysql-connector-python
