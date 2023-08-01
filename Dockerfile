@@ -14,7 +14,9 @@ ENV MYSQLCLIENT_LDFLAGS="-L/usr/lib/x86_64-linux-gnu -lmysqlclient"
 
 RUN pip3 install mysqlclient==2.2.0
 
-#RUN python3 manage.py makemigrations && python3 manage.py migrate
+RUN python3 manage.py makemigrations  
+
+RUN python3 manage.py migrate
 
 EXPOSE 8000
 
