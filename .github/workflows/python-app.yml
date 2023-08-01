@@ -9,6 +9,22 @@ env:
     DOCKER_BUILD_VERSION: ${{ github.run_number }}
 
 jobs:
+  setup-mysql:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install MySQL
+        run: sudo apt-get update && sudo apt-get install -y mysql-server
+
+      - name: Start MySQL Service
+        run: | 
+          sudo service mysql start
+          sudo service mysql status
+      - name: Show Databases
+        run: |
+          mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
+          mysql -h localhost -uroot -proot -e "CREATE DATABASE IF NOT EXISTS Santhosh;"
+          mysql -h localhost --port 3306 -uroot -proot -e "SHOW DATABASES";
+          mysql -h localhost --port 3306 -uroot -proot -e "USE Santhosh; SHOW DATABASES;"
   build-and-push:
     runs-on: ubuntu-latest
     steps:
